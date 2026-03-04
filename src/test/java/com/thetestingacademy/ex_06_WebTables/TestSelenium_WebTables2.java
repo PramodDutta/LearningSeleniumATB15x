@@ -27,6 +27,7 @@ public class TestSelenium_WebTables2 {
 
         List<WebElement> row_tables = table.findElements(By.tagName("tr"));
 
+
         for (int i = 0; i < row_tables.size(); i++) {
 
             List<WebElement> column_tables = row_tables.get(i).findElements(By.tagName("td"));
