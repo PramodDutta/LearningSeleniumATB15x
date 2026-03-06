@@ -1,50 +1,31 @@
 package com.thetestingacademy.ex_07_Selenium_Waits;
 
 import com.thetestingacademy.CommonToAll;
+import com.thetestingacademy.WaitHelpers;
 import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+import static com.thetestingacademy.WaitHelpers.checkVisibility;
+import static com.thetestingacademy.WaitHelpers.waitImplicitWait;
 
-public class TestSeleniumExplicit_MiniProject4 extends CommonToAll {
+public class TestSeleniumExplicit_MiniProject5 extends CommonToAll {
 
 
     @Description("Verify  makemytrip opens with modal")
     @Test
     public void testCloseModal() {
-
-
-
         WebDriver driver = new ChromeDriver();
         openBrowser(driver,"https://www.makemytrip.com/");
-
-
-//        // //span[@data-cy='closeModal']
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-cy='closeModal']")));
-//
         waitForVisibility(driver,3,"//span[@data-cy='closeModal']");
+        clickElementFound("//span[@data-cy='closeModal']");
 
-        WebElement closeModel = driver.findElement(By.xpath("//span[@data-cy='closeModal']"));
-        closeModel.click();
-
-        waitForJVM(10000);
+        // static -
+        WaitHelpers.waitJVM(10000);
         closeBrowser(driver);
-
-
-
-
-
-
-
-
-
     }
 
 
