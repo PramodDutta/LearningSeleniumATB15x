@@ -4,6 +4,7 @@ import com.thetestingacademy.WaitHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -12,6 +13,10 @@ public class Lab31_SVG_MAP {
 
     @Test
     public void verifyStatesInSVG(){
+
+
+
+
         ChromeDriver driver = new ChromeDriver();
         String URL = "https://www.amcharts.com/svg-maps/?map=india";
         driver.get(URL);
